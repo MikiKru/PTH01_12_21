@@ -10,3 +10,4 @@ print(float(integer_number))                # konwersja rozszerzająca
 print(hex(name.__hash__()))
 print(hex(id(integer_number)))
 print(hex(id(integer_number1)))
+print(type(True), bool(1), bool(0), bool(123))
