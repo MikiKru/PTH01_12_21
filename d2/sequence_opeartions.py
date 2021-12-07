@@ -17,3 +17,16 @@ first, *middle, last = range(50)
 print(first)
 print(middle)
 print(last)
+
+# multiplikacja
+numbers = range(5)
+print(list(numbers) * 3)
+print("ALA" * 3)
+print(*numbers)
+print(30 in numbers)
+
+# błędy
+# txt = "XYZ"
+# print(txt[10])
+# print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
