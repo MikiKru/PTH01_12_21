@@ -1,8 +1,3 @@
-full_name = "World Health Organization"
-shortcut = ""
-print(full_name.split())
-for word in full_name.split():      # domyślnie split dzieli po znakach białych
-    if word[0].isupper():
-        shortcut += word[0]
+full_name = "United Nations Educational, Scientific and Cultural Organization"
 
-print(shortcut)
+print("".join([word[0] for word in full_name.split() if word[0].isupper()]))
