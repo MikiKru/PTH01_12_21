@@ -15,3 +15,5 @@ print(params[0:5:2])        # od indeksu włącznie do indeksu wyłącznie co dr
 print(params[ : :2])        # od cała krotka co drugi element
 print(params[-1], params[-2], params[-len(params)])     # indeksowanie wartościami ujemnymi
 
+editable = list(params)     # rzutowanie na listę
+print(type(editable))
