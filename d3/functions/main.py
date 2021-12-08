@@ -25,4 +25,9 @@ print("Średnia ocen:",get_avg_from_grades(3,5,4))
 print("Średnia ocen:",get_avg_from_grades_named_params(grade1=3,grade2=5,grade3=4))
 print("Średnia ocen:",get_avg_from_grades_named_params(grade1=3.5,grade2=5))
 
+print(black_or_white())
+print(black_or_white())
+print(black_or_white())
+print(black_or_white())
+print(black_or_white())
 

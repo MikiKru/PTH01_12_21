@@ -36,3 +36,12 @@ def get_avg_from_grades_named_params(**grades):
     for key, grade in grades.items():
         print(key, grade)
     return mean(grades.values())
+
+color = 'black'
+def black_or_white():
+    global color
+    if color == 'black':
+        color = 'white'
+    else:
+        color = 'black'
+    return color
