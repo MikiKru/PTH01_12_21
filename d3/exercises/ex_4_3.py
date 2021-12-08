@@ -9,16 +9,24 @@ def get_data():
     record5 = {"name": "Maciej", "lastName": "Urbanski", "address": "Łódź", "gender": True, "age": 44}
     return [record1, record2, record3, record4, record5]
 
-def get_data_by_gender_and_address(data, gender=True, address='Warszawa'):
-    return [record for record in data if record["gender"] == gender and record["address"] == address]
+gender = True
+address = 'Warszawa'
+low_tresh = 35
+high_tresh = 40
 
-def get_data_by_age(data, low_tresh, high_tresh):
-    return [record for record in data if record["age"] >= low_tresh and record["age"] <= high_tresh]
+def filter_get_data_by_gender_and_address(record):
+    global gender, address
+    return record["gender"] == gender and record["address"] == address
+def get_data_by_age(record):
+    global low_tresh, high_tresh
+    return record["age"] >= low_tresh and record["age"] <= high_tresh
+def get_female_A(record):
+    return record["name"][0] == 'A' and not record['gender']
+def get_age(record):
+    return record['age']
 
-def get_mean_age(data, gender, name_starts_with='A'):
-    result = [record["age"] for record in data if record["name"][0] == name_starts_with and record["gender"] == gender]
-    return statistics.mean(result) if result else 0
-
-print(get_data_by_gender_and_address(get_data()))
-print(get_data_by_age(get_data(), 20, 40))
-print(get_mean_age(get_data(),True))
+print(*filter(filter_get_data_by_gender_and_address,get_data()))
+print(*filter(get_data_by_age,get_data()))
+femaleA = list(filter(get_female_A,get_data()))
+ages = list(map(get_age, femaleA))
+print(statistics.mean(ages))
