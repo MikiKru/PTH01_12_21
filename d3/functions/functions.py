@@ -19,3 +19,7 @@ def filter_by_treshold(seq, treshold):
     print("treshold", treshold)
     return [element for element in seq if element > treshold]
 
+def get_record(name, lastname, gender = True, age = 18):
+    return dict(zip(
+        ["name","lastname", "gender", "age"],
+        [name,lastname, gender, age]))
