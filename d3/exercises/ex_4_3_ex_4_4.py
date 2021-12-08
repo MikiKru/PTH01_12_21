@@ -24,9 +24,19 @@ def get_female_A(record):
     return record["name"][0] == 'A' and not record['gender']
 def get_age(record):
     return record['age']
+def order_by_lastname(record):
+    return record['lastName']
+def order_by_gender_age(record):
+    return record['gender'], record['age']
 
 print(*filter(filter_get_data_by_gender_and_address,get_data()))
 print(*filter(get_data_by_age,get_data()))
 femaleA = list(filter(get_female_A,get_data()))
 ages = list(map(get_age, femaleA))
 print(statistics.mean(ages))
+
+# lista osób postotowana po nazwisku
+print(sorted(get_data(),key=order_by_lastname))
+# lista osób posortowana po płci i wieku
+print(sorted(get_data(),key=order_by_gender_age))
+
