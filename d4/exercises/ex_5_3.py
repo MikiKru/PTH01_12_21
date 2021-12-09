@@ -40,8 +40,8 @@ class Person:
         return f"{self.get_name()} {self.get_last_name()}, płeć: {'M' if self.get_gender() else 'K'}, wiek: {self.how_many_years()} lat"
     name = property(get_name,set_name)
     last_name = property(get_last_name, set_last_name)
-    gender = property(set_gender,set_gender)
-    birth_date = property(get_birth_year, set_birth_year)
+    gender = property(get_gender,set_gender)
+    birth_year = property(get_birth_year, set_birth_year)
 
 p = Person("Michał","Kru", True, 2000)
 p.name = ""
