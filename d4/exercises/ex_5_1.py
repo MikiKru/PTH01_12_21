@@ -6,7 +6,7 @@ class Person:
         self.name = name
         self.last_name = last_name
         self.gender = gender
-        if date.today().year < birth_year:
+        if date.today().year < birth_year or birth_year <= 0:
             self.birth_year = None
         else:
             self.birth_year = birth_year
