@@ -48,3 +48,4 @@ p.name = ""
 p.birth_date = 2030
 print(p)
 print(p.output_format())
+# print(p.__hash__())
