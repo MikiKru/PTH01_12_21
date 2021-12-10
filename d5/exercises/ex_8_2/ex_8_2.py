@@ -1,6 +1,18 @@
 import traceback
 from datetime import date
 
+class BirthDateError(Exception):
+    def __init__(self, mesg):
+        self.__mesg=mesg
+    def __str__(self):
+        return self.__mesg
+
+class NoValueError(Exception):
+    def __init__(self, mesg):
+        self.__mesg=mesg
+    def __str__(self):
+        return self.__mesg
+
 
 class Person:
     def __init__(self, name: str, last_name: str, gender: bool, birth_year: int):
@@ -20,8 +32,8 @@ class Person:
         try:
             self.__name = name
             if not name.isalnum():
-                raise TypeError("imię nie może być puste")
-        except TypeError as e:
+                raise NoValueError("imię nie może być puste")
+        except NoValueError as e:
             print(e)
             # traceback.print_exc() - informacja o błędzie taka jak na konsoli
             self.__name = 'anonim'
@@ -29,8 +41,8 @@ class Person:
         try:
             self.__last_name = last_name
             if not last_name.isalnum():
-                raise TypeError("nazwisko nie może być puste")
-        except TypeError as e:
+                raise NoValueError("nazwisko nie może być puste")
+        except NoValueError as e:
             print(e)
             # traceback.print_exc() - informacja o błędzie taka jak na konsoli
             self.__last_name = 'anonim'
@@ -40,8 +52,8 @@ class Person:
         try:
             self.__birth_year = birth_year
             if date.today().year < birth_year or birth_year <= 0:
-                raise ValueError("nieprawidłowa data")
-        except ValueError as e:
+                raise BirthDateError("nieprawidłowa data")
+        except BirthDateError as e:
             print(e)
             self.__birth_year = None
     def how_many_years(self):
