@@ -1,7 +1,6 @@
 from d5.exercises.ex_7_3.model.address import Address
 from d5.exercises.ex_7_3.model.person import Person
 
-
 class ORM:
     def object_to_file(self, people, path):
         with open(path, "w", encoding="utf-8") as file:
