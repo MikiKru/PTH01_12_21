@@ -17,7 +17,7 @@ class Address:
     def __str__(self):
         return f"{self.street}, {self.postal_code}, {self.city}"
 
-p = Person("Michał", "Kru", None)
+p = Person("Michał", "Kru", Address("X","X","X"))
 # p = None
 if __debug__:
     assert p.address != None, 'adres obiektu person nie może być None'
