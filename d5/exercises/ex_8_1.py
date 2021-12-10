@@ -37,10 +37,13 @@ class Person:
     def set_gender(self, gender : bool):
         self.__gender = gender
     def set_birth_year(self, birth_year : int):
-        if date.today().year < birth_year or birth_year <= 0:
-            self.__birth_year = None
-        else:
+        try:
             self.__birth_year = birth_year
+            if date.today().year < birth_year or birth_year <= 0:
+                raise ValueError("nieprawidłowa data")
+        except ValueError as e:
+            print(e)
+            self.__birth_year = None
     def how_many_years(self):
         return date.today().year - self.get_birth_year() if self.get_birth_year() != None else 'B/D'
     def output_format(self):
@@ -52,5 +55,5 @@ class Person:
     gender = property(get_gender,set_gender)
     birth_year = property(get_birth_year, set_birth_year)
 
-p = Person("","", True, 2000)
+p = Person("","", True, 2022)
 print(p)
