@@ -3,5 +3,7 @@ class Person:
         self.first_name = first_name
         self.last_name = last_name
         self.address = address
+    def to_csv(self):
+        return f"{self.first_name}; {self.last_name}; {self.address.to_csv()}"
     def __str__(self):
-        return f"{self.first_name}; {self.last_name}; {self.address}"
+        return f"{self.first_name}, {self.last_name}, {self.address}"

@@ -3,5 +3,7 @@ class Address:
         self.street = street
         self.postal_code = postal_code
         self.city = city
-    def __str__(self):
+    def to_csv(self):
         return f"{self.street}; {self.postal_code}; {self.city}"
+    def __str__(self):
+        return f"{self.street}, {self.postal_code}, {self.city}"
